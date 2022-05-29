@@ -51,7 +51,7 @@ const makeNotesList = (notes=[{title:"Dummy Title",body:'loremsf sf fjdasloiea e
     noteLeftNotes.innerHTML = noteList.join('');
 }
 
-
+const alertSound = new Audio('sci-fi-beeperror-179-sound-effect-97326661.mp3')
 function saveNewNote(){
     
     // empty note object for new note
@@ -73,6 +73,7 @@ function saveNewNote(){
         <p>A note must have a <strong>title</strong>! Plz give title to your note</p>
         </div>`
 
+        alertSound.play();
         addModal(modal);
         clearModal();
         return;
@@ -86,10 +87,13 @@ function saveNewNote(){
     // if body content is empty
     // make sure user to type body text
     if(bodyText === ""){
+        
         const modal = `<div class='modal'>
         <i class="fa-solid fa-circle-exclamation"></i>
         <p>A note must have <strong>body</strong>! Plz give body to your note</p>
         </div>`
+
+        alertSound.play();
         addModal(modal);
         clearModal();
         return;
