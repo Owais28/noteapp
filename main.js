@@ -18,8 +18,14 @@ const noteBox = `<input type='text' name='noteTitle' id='' class='note__right-ti
 </div>`
 
 const modalButton = document.querySelector('.modal-button')
+// const mobileOptionsButton = document.querySelector('.note__mobile-options')
+// const noteModal = document.querySelector('.note__mobile-modal')
+
+
 // console.log(noteLeft);
 // setting option button
+
+
 
 
 // create new Node
@@ -33,9 +39,8 @@ addNewNoteButton.addEventListener('click', () => {
     
 })
 
-modal-button.addEventListener('click', () => {
-  saveNewNote()
-})
+
+
 // this function takes all notes from localStorage and add it to 
 // Left part of note app that is "noteLeft"
 // this function is called every time whenever user save his note to local storage
@@ -146,6 +151,8 @@ const addModal = (modal) => {
     // console.log(modalWrapper)
     modalWrapper.innerHTML = modal;
 }
+
+
 
 
 

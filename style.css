@@ -32,7 +32,7 @@ input {
     .note__left {
         height: 400px;
         overflow: hidden;
-        display: none;
+        /* display: none; */
     }
 
     /* .note__button-addNew{
@@ -44,8 +44,8 @@ input {
         min-height: 200px;
         max-height: 400px;
         overflow: scroll;
-        display: hidden;
-        visibility: hidden;
+        /* display: hidden;
+        visibility: hidden; */
 
     }
 
@@ -58,8 +58,8 @@ input {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: rgb(238, 255, 238);
-    border: 1px solid rgb(205, 252, 205);
+    background-color: rgb(214, 214, 245);
+    border: 1px solid rgb(179, 179, 255);
     border-radius: 5px;
 }
 input,textarea {
@@ -67,6 +67,7 @@ input,textarea {
     width: 100%;
     outline: none;
     border: none;
+    font-family:'Spline Sans Mono', monospace; 
 }
 .note__new-title {
     font-size: 1.4rem;
@@ -176,7 +177,7 @@ button:hover {
 }
 
 .visibility {
-    visibility: visible;
+    display: block;
 }
 
 .visible {
@@ -294,9 +295,10 @@ button:hover {
     z-index: 200000;
     backdrop-filter: blur(1rem);
     border-radius: 10px;
-    border: 1px solid black;
-    padding: 30px;
-    height: 60vh;
+    border: 2px solid black;
+    padding: 20px 30px;
+    height: max-content;
+    display: none;
 }
 
 .modal-title {
@@ -313,7 +315,7 @@ button:hover {
 
 .modal-textarea {
     width: 100%;
-    height: 45%;
+    height: 180px;
     border-radius: 10px;
     background-color: aliceblue;
     margin-top: 15px;
