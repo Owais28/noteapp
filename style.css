@@ -208,6 +208,7 @@ button:hover {
     border-radius: 10px;
     animation: incoming .4s ease-in ;
     animation: fade 3s ease-in;
+    max-width: 80vw;
 
 }
 
