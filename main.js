@@ -86,32 +86,37 @@ const makeNotesList = (notes=[{title:"Dummy Title",body:'loremsf sf fjdasloiea e
             deleteButtons.forEach((deleteButton)=> {
 
                 deleteButton.addEventListener('click', function deleteNoteFunction(event) {
-                    let target = event.target;
-                    const superParent = target.parentNode.parentNode.parentNode;
-                
-                    // testing...
-                    // console.log(superParent.children[0].textContent)
-                
-                    const targetTitle = superParent.children[0].textContent;
-                    const targetBody = superParent.children[1].textContent;
-                
-                    const localStorageTemporary = JSON.parse(localStorage.getItem('noteapp-notes'));
-                    // console.log(localStorageTemporary)
-                
-                    const newArrayOfNotesAfterFilter = localStorageTemporary.filter((note) => {
-                        if(note.title !== targetTitle && note.body !== targetBody){
-                            return true;
-                        }
-                    })
-                    
+
                     if(confirm('Are you sure to delete this note?') === true){
+                        let target = event.target;
+                        const superParent = target.parentNode.parentNode.parentNode;
+                    
+                        // testing...
+                        // console.log(superParent.children[0].textContent)
+                    
+                        const targetTitle = superParent.children[0].textContent;
+                        const targetBody = superParent.children[1].textContent;
+                    
+                        const localStorageTemporary = JSON.parse(localStorage.getItem('noteapp-notes'));
+                        // console.log(localStorageTemporary)
+                    
+                        const newArrayOfNotesAfterFilter = localStorageTemporary.filter((note) => {
+                            if(note.title !== targetTitle && note.body !== targetBody){
+                                return true;
+                            }
+                        })
+                        
                         localStorage.setItem('noteapp-notes',JSON.stringify(newArrayOfNotesAfterFilter))
+
+                        // console.log(newArrayOfNotesAfterFilter);
+                        makeNotesList(newArrayOfNotesAfterFilter)
+                    } else {
+                        return;
                     }
                     
-                    // !testing
-                    // console.log(newArrayOfNotesAfterFilter);
-                    makeNotesList(newArrayOfNotesAfterFilter)
-                    })
+                    
+                    
+                })
             })
 
             // deleteButtons.
