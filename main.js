@@ -34,7 +34,7 @@ addNewNoteButton.addEventListener('click', () => {
 })
 
 modal-button.addEventListener('click', () => {
-  saveNewNote
+  saveNewNote()
 })
 // this function takes all notes from localStorage and add it to 
 // Left part of note app that is "noteLeft"
