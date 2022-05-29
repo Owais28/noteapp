@@ -218,10 +218,27 @@ button:hover {
     border: 2px solid rgb(251, 163, 163);
     background-color: rgb(250, 224, 224);
     border-radius: 10px;
-    animation: incoming .4s ease-in ;
+    animation: incoming .5s ease-in ;
     animation: fade 3s ease-in;
     max-width: 80vw;
 
+}
+
+@media screen and (max-width:450px) {
+    .modal {
+        top: 110vh;
+    }
+
+    /* @keyframes incoming {
+        0% {
+            position: absolute;
+            bottom: 10px;
+        }
+
+        100% {
+            bottom: 20px;
+        }
+    } */
 }
 
 @keyframes incoming {
