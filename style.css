@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding:0 ;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spline Sans Mono', monospace;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    overflow: hidden;
+}
+
+.note__left {
+    padding: 40px 40px;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+}
+
+.note__new {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgb(238, 255, 238);
+    border: 1px solid rgb(205, 252, 205);
+    border-radius: 5px;
+}
+input,textarea {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+.note__new-title {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+input {
+    height: 5rem;
+    padding: 10px 10px;
+    font-size: 4rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+textarea {
+    height: 80%;
+    padding: 10px 10px;
+    font-size: 1.3rem;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.note__right {
+    padding: 20px;
+    border-left: 1px solid black;
+    position: relative;
+}
+.note__right-title {
+    font-weight: 700;
+}
+
+button {
+    width: 100%;
+    padding: 10px; 
+    font-size: 1.4rem;
+    background-color: rgb(90, 131, 90); 
+    border-radius: 10px;  
+    outline: none;
+    border: none;
+    color: white;
+
+}
+
+.button__right-delete, .button__right-save {
+    width: 200px;
+    margin-right: 10px;
+    
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.delete {
+    background-color: red;
+    opacity: 0.9;
+}
+
+.setting__option {
+    width: 40px;
+    height: 40px;
+    background-color: aliceblue;
+    overflow: hidden;
+    color: black;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    text-align: center;
+    align-items: center;
+    border-radius: 100px;
+    justify-items: center;
+    justify-content: center;
+    outline: 2px solid black;
+    cursor: pointer;
+
+}
+.setting__option i {
+    display: block;
+    font-size: 1.4rem;
+    margin: 10px auto;
+
+}
+.setting__option::after{
+    position: relative;
+    content: none;
+}
+.setting__menu{
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    border: 2px solid black;
+    width: 300px;
+    border-radius: 3px;
+    visibility: hidden;
+    transition: all .1s ease-in; 
+}
+
+.visibility {
+    visibility: visible;
+}
+
+.visible {
+    visibility: visible;
+}
+.setting__menu-item {
+    padding: 20px 20px;
+    border-bottom: 2px solid black;
+    font-size: 1.2rem;
+    background-color: rgb(254, 254, 203);
+    display: flex;
+}
+
+.setting__menu-item i {
+    margin-right: 10px;
+}
+
+.setting__menu-item:last-child {
+    border-bottom: none;
+}
+.modal-bedore {
+    position: relative;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    position: absolute;
+    top: 2%;
+    right: 10%;
+    padding: 20px;
+    border: 2px solid rgb(251, 163, 163);
+    background-color: rgb(250, 224, 224);
+    border-radius: 10px;
+    animation: incoming .4s ease-in ;
+    animation: fade 3s ease-in;
+
+}
+
+@keyframes incoming {
+    from{
+        top : -1%
+    }
+
+    to {
+        top : 2%
+    }
+}
+
+@keyframes outline {
+    from {
+        outline: 1px solid rgb(251, 163, 163);
+
+    }
+
+    to {
+        outline: 4px solid red;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.modal i {
+    color: black;
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
