@@ -13,7 +13,7 @@ body {
 .app {
     display: grid;
     grid-template-columns: 400px 1fr;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .note__left {
@@ -27,7 +27,7 @@ body {
 @media screen and (max-width:450px){
     .note__left {
         height: 400px;
-        overflow: scroll;
+        overflow: hidden;
         /* visibility: hidden; */
     }
 
