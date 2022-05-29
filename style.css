@@ -27,7 +27,7 @@ body {
 @media screen and (max-width:450px){
     .note__left {
         height: 400px;
-        overflow: hidden;
+        overflow: scroll;
         /* visibility: hidden; */
     }
 
@@ -39,7 +39,7 @@ body {
         height: max-content;
         min-height: 200px;
         max-height: 400px;
-        overflow: hidden;
+        overflow: scroll;
 
     }
 
