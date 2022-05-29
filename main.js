@@ -4,7 +4,7 @@ const settingOptionButton = document.querySelector('.setting__option');
 const settingMenu = document.querySelector('.setting__menu');
 const noteArea = document.querySelector('.note__right')
 const addNewNoteButton = document.querySelector('.note__button-addNew')
-const noteLeft = document.querySelector('.note__left'); 
+const noteLeftNotes = document.querySelector('.note__left-notes'); 
 
 const noteBox = `<input type='text' name='noteTitle' id='' class='note__right-title' placeholder="Title...">
 <textarea wrap="soft"  name='noteBody' id='' cols='30' rows='10' class='note__right-body' placeholder="this is my new note!"></textarea>
@@ -48,7 +48,7 @@ const makeNotesList = (notes=[{title:"Dummy Title",body:'loremsf sf fjdasloiea e
     )
 
     console.log(noteList);
-    noteLeft.innerHTML = noteList.join('');
+    noteLeftNotes.innerHTML = noteList.join('');
 }
 
 
@@ -112,7 +112,6 @@ function saveNewNote(){
 
     // testing...
     // console.log(noteStorageAfterParse)
-
     // getting localStorage with recently added note
     const newNoteStorage = localStorage.getItem('noteapp-notes');
     const newNoteStorageAfterParse = JSON.parse(newNoteStorage);
