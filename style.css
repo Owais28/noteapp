@@ -13,7 +13,8 @@ body {
 .app {
     display: grid;
     grid-template-columns: 400px 1fr;
-    /* overflow: hidden; */
+    overflow: hidden;
+    height: 100vh;
 }
 
 .note__left {
@@ -28,7 +29,7 @@ body {
     .note__left {
         height: 400px;
         overflow: hidden;
-        /* visibility: hidden; */
+        display:  hidden;
     }
 
     /* .note__button-addNew{
@@ -40,6 +41,8 @@ body {
         min-height: 200px;
         max-height: 400px;
         overflow: scroll;
+        display: hidden;
+        visibility: hidden;
 
     }
 
@@ -248,7 +251,7 @@ button:hover {
 }
 .note__mobile-options {
     width: 100%;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.096);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,7 +260,7 @@ button:hover {
     position: fixed;
     bottom: 0px;
     right: 0px;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1rem);
 
 }
 
