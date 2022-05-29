@@ -246,3 +246,18 @@ button:hover {
     margin-right: 15px;
     font-size: 1.5rem;
 }
+.note__mobile-options {
+    width: 100%;
+    background-color: black;
+    height: 40px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+
+}
+
+@media screen and (min-width:450px) {
+    .note__mobile-options {
+        display: hidden;
+    }
+}
