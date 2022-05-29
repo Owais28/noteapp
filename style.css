@@ -21,6 +21,7 @@ body {
 
 input {
   font-family:'Spline Sans Mono', monospace; 
+  font-family: 'Tiro Gurmukhi', serif;
 }
 .note__left {
     padding: 40px 40px;
@@ -70,6 +71,7 @@ input,textarea {
     outline: none;
     border: none;
     font-family:'Spline Sans Mono', monospace; 
+    font-family: 'Tiro Gurmukhi', serif;
 }
 .note__new-title {
     font-size: 1.4rem;
