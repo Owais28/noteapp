@@ -17,6 +17,7 @@ const noteBox = `<input type='text' name='noteTitle' id='' class='note__right-ti
 </div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
 </div>`
 
+const modalButton = document.querySelector('.modal-button')
 // console.log(noteLeft);
 // setting option button
 
@@ -32,7 +33,9 @@ addNewNoteButton.addEventListener('click', () => {
     
 })
 
-
+modal-button.addEventListener('click', () => {
+  saveNewNote
+})
 // this function takes all notes from localStorage and add it to 
 // Left part of note app that is "noteLeft"
 // this function is called every time whenever user save his note to local storage
@@ -52,6 +55,8 @@ const makeNotesList = (notes=[{title:"Dummy Title",body:'loremsf sf fjdasloiea e
 }
 
 const alertSound = new Audio('sci-fi-beeperror-179-sound-effect-97326661.mp3')
+
+
 function saveNewNote(){
     
     // empty note object for new note
