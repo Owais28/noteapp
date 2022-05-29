@@ -248,13 +248,23 @@ button:hover {
 }
 .note__mobile-options {
     width: 100%;
-    background-color: black;
-    height: 40px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 60px;
     position: fixed;
     bottom: 0px;
     right: 0px;
+    backdrop-filter: blur(2px);
 
 }
+
+.note__mobile-options i {
+    font-size: 1.3rem;
+}
+
 
 @media screen and (min-width:450px) {
     .note__mobile-options {
