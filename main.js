@@ -73,7 +73,34 @@ const makeNotesList = (notes=[{title:"Dummy Title",body:'loremsf sf fjdasloiea e
     console.log(noteList);
     noteLeftNotes.innerHTML = noteList.join('');
 
+    function deleteNoteFunction(event){
 
+        let target = event.target
+        const superParent = target.parentNode.parentNode.parentNode;
+
+        // testing...
+        // console.log(superParent.children[0].textContent)
+
+        const targetTitle = superParent.children[0].textContent;
+        const targetBody = superParent.children[1].textContent;
+
+        const localStorageTemporary = JSON.parse(localStorage.getItem('noteapp-notes'));
+        // console.log(localStorageTemporary)
+        
+        const newArrayOfNotesAfterFilter = localStorageTemporary.filter((note) => {
+            if(note.title !== targetTitle && note.body !== targetBody){
+                return true;
+            }
+        })
+        
+        if(confirm('Are you sure to delete this note?') === true){
+            localStorage.setItem('noteapp-notes',JSON.stringify(newArrayOfNotesAfterFilter))
+        }
+        
+        console.log(newArrayOfNotesAfterFilter);
+        makeNotesList(newArrayOfNotesAfterFilter)
+    }
+}
     const deleteNote = () => {
         // adding event listeners to 
         const addEventListenerToDeleteButtons = () => {
@@ -81,46 +108,19 @@ const makeNotesList = (notes=[{title:"Dummy Title",body:'loremsf sf fjdasloiea e
 
             deleteButtons.forEach((deleteButton)=> {
 
-                deleteButton.addEventListener('click', (event)=> {
-                    let target = event.target
-                    const superParent = target.parentNode.parentNode.parentNode;
-
-                    // testing...
-                    // console.log(superParent.children[0].textContent)
-
-                    const targetTitle = superParent.children[0].textContent;
-                    const targetBody = superParent.children[1].textContent;
-
-                    const localStorageTemporary = JSON.parse(localStorage.getItem('noteapp-notes'));
-                    // console.log(localStorageTemporary)
-
-                    const newArrayOfNotesAfterFilter = localStorageTemporary.filter((note) => {
-                        if(note.title !== targetTitle && note.body !== targetBody){
-                            return true;
-                        }
-                    })
-
-                    if(confirm('Are you sure to delete this note?') === true){
-                        localStorage.setItem('noteapp-notes',JSON.stringify(newArrayOfNotesAfterFilter))
-                    }
-                    console.log(newArrayOfNotesAfterFilter);
-
-                    makeNotesList(newArrayOfNotesAfterFilter)
-
-                })
+                deleteButton.addEventListener('click', deleteNoteFunction(event))
             })
 
             // deleteButtons.
             console.log(deleteButtons)
         }
-
-    addEventListenerToDeleteButtons()
+        addEventListenerToDeleteButtons()
 
     }
     
 
     deleteNote();
-}
+
 
 makeNotesList(JSON.parse(localStorage.getItem('noteapp-notes')));
 
