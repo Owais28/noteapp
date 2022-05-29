@@ -1,4 +1,4 @@
-localStorage.setItem('noteapp-notes',"[]");
+// localStorage.setItem('noteapp-notes',"[]");
 
 const settingOptionButton = document.querySelector('.setting__option');
 const settingMenu = document.querySelector('.setting__menu');
@@ -26,6 +26,11 @@ const modalButton = document.querySelector('.modal-button')
 // setting option button
 
 
+// Emojis
+
+
+
+
 
 
 // create new Node
@@ -50,14 +55,72 @@ const makeNotesList = (notes=[{title:"Dummy Title",body:'loremsf sf fjdasloiea e
 
     notes.map(
         (note) => {
-            const newNoteItem = `<div class='note__new'><div class='note__new-title'>${note.title}</div><div class='note__new-body'>${note.body}</div></div>`
+            const newNoteItem = `<div class='note__new'><div class='note__new-title'>${note.title}</div><div class='note__new-body'>${note.body}</div><div class="note__footer"><div class='note__date'>
+            ${note.dateCreated}
+        </div><div class='note__more-options'>
+            <i class="fa-solid fa-file-pen"></i>
+            <i class="fa-solid fa-trash-can"></i>
+        </div>
+        </div>
+        </div>`
+
+
+        
             noteList.push(newNoteItem);
         }
     )
 
     console.log(noteList);
     noteLeftNotes.innerHTML = noteList.join('');
+
+
+    const deletNote = () => {
+        // adding event listeners to 
+    const addEventListenerToDeleteButtons = () => {
+        const deleteButtons = document.querySelectorAll('.fa-trash-can')
+
+        deleteButtons.forEach((deleteButton)=> {
+
+            deleteButton.addEventListener('click', (event)=> {
+                let target = event.target
+                const superParent = target.parentNode.parentNode.parentNode;
+
+                // testing...
+                // console.log(superParent.children[0].textContent)
+
+                const targetTitle = superParent.children[0].textContent;
+                const targetBody = superParent.children[1].textContent;
+
+                const localStorageTemporary = JSON.parse(localStorage.getItem('noteapp-notes'));
+                // console.log(localStorageTemporary)
+
+                const newArrayOfNotesAfterFilter = localStorageTemporary.filter((note) => {
+                    if(note.title !== targetTitle && note.body !== targetBody){
+                        return true;
+                    }
+                })
+
+                if(confirm('Are you sure to delete this note?') === true){
+                    localStorage.setItem('noteapp-notes',JSON.stringify(newArrayOfNotesAfterFilter))
+                }
+                console.log(newArrayOfNotesAfterFilter);
+
+                makeNotesList(newArrayOfNotesAfterFilter)
+
+            })
+        })
+
+        // deleteButtons.
+        console.log(deleteButtons)
+    }
+
+    }
+    
+
+    deletNote();
 }
+
+makeNotesList(JSON.parse(localStorage.getItem('noteapp-notes')));
 
 const alertSound = new Audio('sci-fi-beeperror-179-sound-effect-97326661.mp3')
 
@@ -109,12 +172,19 @@ function saveNewNote(){
         return;
     }
 
+    const date = new Date();
+    // console.log(date)
+    // const time = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
+
     // console.log(localStorage.getItem('noteapp-notes'));
 
     // making new note
     newNote.title = titleText;
     newNote.body = bodyText;
     newNote.id = _id;
+    newNote.dateCreated = date.toLocaleString();
+    newNote.lastUpdate = '';
 
     // getting previous local storage data
     const noteStorage = localStorage.getItem('noteapp-notes');
@@ -131,7 +201,7 @@ function saveNewNote(){
     const newNoteStorageAfterParse = JSON.parse(newNoteStorage);
 
     makeNotesList(newNoteStorageAfterParse);
-
+    noteArea.innerHTML = ""
     // console.log(noteLeft);  
 
 }
@@ -152,6 +222,11 @@ const addModal = (modal) => {
     modalWrapper.innerHTML = modal;
 }
 
+
+// Functions
+
+const deleteButtons = document.querySelectorAll('.fa-trash-can')
+console.log(deleteButtons)
 
 
 

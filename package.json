@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "emoji-js": "^3.7.0",
+    "jquery.emojiarea.js": "^0.1.8-beta"
+  }
+}
