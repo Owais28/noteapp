@@ -29,7 +29,7 @@ body {
     .note__left {
         height: 400px;
         overflow: hidden;
-        display:  hidden;
+        display: none;
     }
 
     /* .note__button-addNew{
@@ -88,7 +88,7 @@ textarea {
 
 @media screen and (max-width:450px) {
     textarea {
-        height: 200px;
+        height: 60vh;
     }
 
     button {
@@ -251,7 +251,7 @@ button:hover {
 }
 .note__mobile-options {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.096);
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
