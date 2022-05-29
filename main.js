@@ -119,7 +119,7 @@ const makeNotesList = (notes=[{title:"Dummy Title",body:'loremsf sf fjdasloiea e
                 })
             })
 
-            // deleteButtons.
+            // deleteButtons
             // console.log(deleteButtons)
         }
 
