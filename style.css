@@ -60,6 +60,9 @@ input {
     }
 }
 
+.note__new-body {
+    overflow: hidden;
+}
 .note__new {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -67,6 +70,9 @@ input {
     background-color: rgb(214, 214, 245);
     border: 1px solid rgb(179, 179, 255);
     border-radius: 5px;
+    /* height: 120px; */
+    max-height: 130px;
+    overflow: hidden;
 }
 input,textarea {
     display: block;
