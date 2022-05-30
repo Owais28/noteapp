@@ -185,7 +185,7 @@ function updateNoteFunctionality() {
 
             noteArea.innerHTML = `<input type='text' name='noteTitle' id='' class='note__right-title' placeholder="Title...">
             <textarea wrap="soft"  name='noteBody' id='' cols='30' rows='10' class='note__right-body' placeholder="this is my new note!"></textarea>
-            <button type="button" class='button__right-update' >Uodate</button>
+            <button type="button" class='button__right-update' >Update</button>
             <button type="button" class='button__right-unchanged'>Remain unchanged</button>
             <div class='setting__option'><i class="fa-solid fa-sliders"></i></div>
             <div class='setting__menu'><div class='setting__menu-item'><i class="fa-solid fa-font"></i><div class='font-choice'>Font1</div></div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
