@@ -85,6 +85,7 @@ input {
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'Spline Sans Mono', Courier, monospace;
+    font-weight: 600;
 }
 
 textarea {
@@ -113,6 +114,20 @@ textarea {
 }
 .note__right-title {
     font-weight: 700;
+    height: 5rem;
+    padding: 10px 10px;
+    font-size: 4rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Spline Sans Mono', Courier, monospace;
+}
+
+.note__right-body {
+    height: 80%;
+    padding: 10px 10px;
+    font-size: 1.3rem;
+    resize: none;
+    margin-bottom: 20px;
 }
 
 button {

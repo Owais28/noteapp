@@ -81,9 +81,47 @@ const makeNotesList = (
   // console.log(noteList);
   noteLeftNotes.innerHTML = noteList.join("");
 
+  
   deleteNoteFunctionality();
   updateNoteFunctionality();
+  showNoteFunctionality();
 };
+
+
+const showNoteFunctionality = () => {
+  const addEventListenerToEveryNote = () => {
+
+    const notes = document.querySelectorAll('.note__new-title');
+
+    notes.forEach(
+      (note) => {
+        note.addEventListener('click', function showNote(event) {
+
+          const NOTE = event.target.parentNode
+          noteArea.innerHTML = `<div type='text' class='note__right-title'>${NOTE.children[0].textContent}</div>
+          <div class='note__right-body' >${NOTE.children[1].textContent}</div>`
+        //   let titleContent, bodyContent;
+        // function fillInWrapper(title, body){
+          // let noteBox = `<div type='text'  class='note__right-title' >${title}</div>
+          // <div class='note__right-body' >${body}</div>`
+        //   noteArea.innerHTML = noteBox
+        // }
+        //   console.log(note.children[0].textContent);
+        //   titleContent = note.children[0].textContent;
+        //   bodyContent = note.children[0].textContent;
+
+        //   noteArea.innerHTML = fillInWrapper(titleContent, bodyContent);
+        //   fillInWrapper(titleContent,bodyContent)
+        // noteArea.innerHTML = titleContent
+
+        // console.log(NOTE.children[0].textContent)
+        })
+      }
+    )
+  }
+
+  addEventListenerToEveryNote();
+}
 
 const deleteNoteFunctionality = () => {
 
@@ -125,6 +163,7 @@ const deleteNoteFunctionality = () => {
 
             // console.log(newArrayOfNotesAfterFilter);
             makeNotesList(newArrayOfNotesAfterFilter);
+            noteArea.innerHTML = ""
           } else {
             return;
           }
@@ -141,19 +180,33 @@ const deleteNoteFunctionality = () => {
 
 
 function updateNoteFunctionality() {
+  noteArea.innerHTML = ""
+  console.log(noteArea);
 
   // adding event listeners to update button
   const addEventListenerToUpdateButtons = () => {
     const updateButtons = document.querySelectorAll(".fa-file-pen");
 
+    // noteArea.innerHTML = `<input type='text' name='noteTitle' id=''  placeholder="Title...">
+    //         <textarea wrap="soft"  name='noteBody' id='' cols='30' rows='10'  placeholder="this is my new note!"></textarea>
+    //         <button type="button" class='button__right-update' >Update</button>
+    //         <button type="button" class='button__right-unchanged'>Remain unchanged</button>
+    //         <div class='setting__option'><i class="fa-solid fa-sliders"></i></div>
+    //         <div class='setting__menu'><div class='setting__menu-item'><i class="fa-solid fa-font"></i><div class='font-choice'>Font1</div></div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
+    //         <div class='setting__menu-item'>
+    //         <div class='font-choice'>Font1</div>
+    //         </div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
+    //         </div>`
+
     updateButtons.forEach((updateButton) => {
+
       updateButton.addEventListener(
         "click",
         function updateNoteFunction(event) {
           if (confirm("Are you sure to update this note?") === true) {
+            noteArea.innerHTML = "fsed";
             let target = event.target;
             const superParent = target.parentNode.parentNode.parentNode;
-
             // testing...
             // console.log(superParent.children[0].textContent)
 
@@ -183,8 +236,8 @@ function updateNoteFunctionality() {
             );
 
 
-            noteArea.innerHTML = `<input type='text' name='noteTitle' id='' class='note__right-title' placeholder="Title...">
-            <textarea wrap="soft"  name='noteBody' id='' cols='30' rows='10' class='note__right-body' placeholder="this is my new note!"></textarea>
+            noteArea.innerHTML = `<input type='text' name='noteTitle' id='' class="note__title"  placeholder="Title...">
+            <textarea wrap="soft" class="note__body"  name='noteBody' id='' cols='30' rows='10'  placeholder="this is my new note!"></textarea>
             <button type="button" class='button__right-update' >Update</button>
             <button type="button" class='button__right-unchanged'>Remain unchanged</button>
             <div class='setting__option'><i class="fa-solid fa-sliders"></i></div>
@@ -194,18 +247,20 @@ function updateNoteFunctionality() {
             </div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
             </div>`
 
-            // console.log(noteArea.innerHTML)
+            
 
-            const oldTitleField = document.querySelector('.note__right-title');
+            const oldTitleField = document.querySelector('.note__title');
             oldTitleField.value = targetTitle;
 
-            const oldBodyField = document.querySelector('.note__right-body');
+            const oldBodyField = document.querySelector('.note__body');
             oldBodyField.value = targetBody;
+
+            
 
             function addEventListenersToNewButtons() {
               const updateButton = document.querySelector('.button__right-update')
               const unchangedButton = document.querySelector('.button__right-unchanged')
-              console.log(updateButton)
+              
 
               updateButton.addEventListener('click', () => {
                 // console.log(oldTitleField.value + " " + oldTitleField) testing
@@ -221,7 +276,6 @@ function updateNoteFunctionality() {
                     lastUpdate : new Date().toLocaleString()
                   }
                 )
-
                 console.log(newArrayOfNotesAfterFilter)
 
                 localStorage.setItem('noteapp-notes', JSON.stringify(newArrayOfNotesAfterFilter));
@@ -238,7 +292,6 @@ function updateNoteFunctionality() {
             }
 
             addEventListenersToNewButtons()
-
             // localStorage.setItem(
             //   "noteapp-notes",
             //   JSON.stringify(newArrayOfNotesAfterFilter)
@@ -257,6 +310,7 @@ function updateNoteFunctionality() {
   };
 
   addEventListenerToUpdateButtons();
+  console.log(noteArea.innerHTML)
 
 }
 
