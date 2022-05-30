@@ -66,7 +66,7 @@ const makeNotesList = (
   notes.map((note) => {
     const newNoteItem = `<div class='note__new'><div class='note__new-title'>${note.title}</div><div class='note__new-body'>${note.body}</div><div class="note__footer"><div class='note__date'>
             ${
-              note.lastUpdate !== "" ? `last updated<br/>` + note.lastUpdate : note.dateCreated
+              note.lastUpdate !== "" ? `last updated &rarr;<br/>` + note.lastUpdate : note.dateCreated
             }
         </div><div class='note__more-options'>
             <i class="fa-solid fa-file-pen"></i>
