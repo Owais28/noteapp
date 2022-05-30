@@ -402,7 +402,7 @@ function saveNewNote() {
   const successAudio = new Audio('mixkit-fantasy-game-success-notification-270.wav')
   const modal = `<div class='modal success'>
   <i class="fa-solid fa-circle-check"></i>
-        <p>Hurray! 🥳 Your note have been saved successfully.</p>
+        <p>Hurray! 🥳 Your note has been saved successfully.</p>
         </div>`;
 
     // alertSound.play();
