@@ -41,6 +41,7 @@ addNewNoteButton.addEventListener("click", () => {
   const saveButton = document.querySelector(".button__right-save");
   saveButton.addEventListener("click", () => {
     saveNewNote();
+
   });
 
   const deleteButton = document.querySelector('.button__right-delete');
@@ -397,6 +398,18 @@ function saveNewNote() {
 
   makeNotesList(newNoteStorageAfterParse);
   noteArea.innerHTML = "";
+
+  const successAudio = new Audio('mixkit-fantasy-game-success-notification-270.wav')
+  const modal = `<div class='modal success'>
+  <i class="fa-solid fa-circle-check"></i>
+        <p>Hurray! 🥳 Your note have been saved successfully.</p>
+        </div>`;
+
+    // alertSound.play();
+    addModal(modal);
+    successAudio.play();
+    clearModal();
+
   // console.log(noteLeft);
 }
 

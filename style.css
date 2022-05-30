@@ -301,6 +301,11 @@ a {
 
 }
 
+.modal.success {
+    background-color: rgb(227, 255, 185);
+    border: 2px solid rgb(201, 249, 129);
+}
+
 @media screen and (max-width:450px) {
     .modal {
         top: 110vh;
