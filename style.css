@@ -68,13 +68,16 @@ input {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: rgb(214, 214, 245);
-    border: 1px solid rgb(179, 179, 255);
+    /* background-color: rgb(214, 214, 245);
+    border: 1px solid rgb(179, 179, 255); */
     border-radius: 5px;
     /* height: 120px; */
     max-height: 162px;
     overflow: hidden;
+    background-color: rgb(202, 232, 251);
+    border: 1px solid rgb(126, 197, 255);
 }
+
 input,textarea {
     display: block;
     width: 100%;
