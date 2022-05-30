@@ -132,6 +132,7 @@ textarea {
 @media screen and (max-width:450px) {
     .note__right {
         width: 100vw;
+        height: max-content;
     }
 }
 .note__right-title {
