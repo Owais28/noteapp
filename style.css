@@ -134,7 +134,7 @@ textarea {
 }
 
 .note__right-body {
-    height: 80%;
+    height: 80vw;
     /* padding: 10px 10px;
     font-size: 1.3rem;
     resize: none;
