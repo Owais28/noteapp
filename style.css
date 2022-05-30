@@ -36,6 +36,7 @@ input {
     .note__left {
         height: 400px;
         overflow: hidden;
+        width: 100vw;
         /* display: none; */
     }
 
