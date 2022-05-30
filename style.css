@@ -151,7 +151,10 @@ button {
 button:hover {
     opacity: 0.9;
 }
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .delete {
     background-color: red;
     opacity: 0.9;

@@ -116,7 +116,11 @@ const showNoteFunctionality = () => {
 
         // console.log(NOTE.children[0].textContent)
 
-        window.scrollTo(0,500)
+        // window.scrollTo(0,findPos())
+        // console.log(scrofindPos(document.getElementById('note-box')));
+        document.querySelector('#note-box').scrollIntoView({
+          behavior: 'smooth'
+        })
         })
       }
     )
