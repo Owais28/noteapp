@@ -1,5 +1,7 @@
-// localStorage.setItem('noteapp-notes',"[]");
+// !TODO : 1. add update feature ,
 
+
+// localStorage.setItem('noteapp-notes',"[]");
 const settingOptionButton = document.querySelector(".setting__option");
 const settingMenu = document.querySelector(".setting__menu");
 const noteArea = document.querySelector(".note__right");
@@ -26,16 +28,30 @@ const modalButton = document.querySelector(".modal-button");
 
 // Emojis
 
+
+
+
 // create new Node
 addNewNoteButton.addEventListener("click", () => {
+
   noteArea.innerHTML = noteBox;
 
   document.querySelector('.note__right-title').focus();
+
   const saveButton = document.querySelector(".button__right-save");
   saveButton.addEventListener("click", () => {
     saveNewNote();
   });
+
+  const deleteButton = document.querySelector('.button__right-delete');
+  deleteButton.addEventListener('click', () => {
+    noteArea.innerHTML = '';
+  })
+
 });
+
+
+
 
 // this function takes all notes from localStorage and add it to
 // Left part of note app that is "noteLeft"
@@ -49,7 +65,9 @@ const makeNotesList = (
 
   notes.map((note) => {
     const newNoteItem = `<div class='note__new'><div class='note__new-title'>${note.title}</div><div class='note__new-body'>${note.body}</div><div class="note__footer"><div class='note__date'>
-            ${note.dateCreated}
+            ${
+              note.lastUpdate !== "" ? `last updated<br/>` + note.lastUpdate : note.dateCreated
+            }
         </div><div class='note__more-options'>
             <i class="fa-solid fa-file-pen"></i>
             <i class="fa-solid fa-trash-can"></i>
@@ -63,10 +81,12 @@ const makeNotesList = (
   // console.log(noteList);
   noteLeftNotes.innerHTML = noteList.join("");
 
-  deleteNote();
+  deleteNoteFunctionality();
+  updateNoteFunctionality();
 };
 
-const deleteNote = () => {
+const deleteNoteFunctionality = () => {
+
   // adding event listeners to
   const addEventListenerToDeleteButtons = () => {
     const deleteButtons = document.querySelectorAll(".fa-trash-can");
@@ -118,6 +138,127 @@ const deleteNote = () => {
 
   addEventListenerToDeleteButtons();
 };
+
+
+function updateNoteFunctionality() {
+
+  // adding event listeners to update button
+  const addEventListenerToUpdateButtons = () => {
+    const updateButtons = document.querySelectorAll(".fa-file-pen");
+
+    updateButtons.forEach((updateButton) => {
+      updateButton.addEventListener(
+        "click",
+        function updateNoteFunction(event) {
+          if (confirm("Are you sure to update this note?") === true) {
+            let target = event.target;
+            const superParent = target.parentNode.parentNode.parentNode;
+
+            // testing...
+            // console.log(superParent.children[0].textContent)
+
+            let targetTitle = superParent.children[0].textContent;
+            let targetBody = superParent.children[1].textContent;
+            let targetId;
+            let dateCreated;
+
+            // getting local Storage data before applying current updates
+            const localStorageTemporary = JSON.parse(
+              localStorage.getItem("noteapp-notes")
+            );
+            // console.log(localStorageTemporary)
+
+            // making new array of notes from old notes data excluding our note to be changed
+            const newArrayOfNotesAfterFilter = localStorageTemporary.filter(
+              (note) => {
+                if (note.title !== targetTitle && note.body !== targetBody) {
+                  return true;
+                } else {
+                  targetId = note.id;
+                  dateCreated = note.dateCreated;
+                  console.log(dateCreated);
+                  return false;
+                }
+              }
+            );
+
+
+            noteArea.innerHTML = `<input type='text' name='noteTitle' id='' class='note__right-title' placeholder="Title...">
+            <textarea wrap="soft"  name='noteBody' id='' cols='30' rows='10' class='note__right-body' placeholder="this is my new note!"></textarea>
+            <button type="button" class='button__right-update' >Uodate</button>
+            <button type="button" class='button__right-unchanged'>Remain unchanged</button>
+            <div class='setting__option'><i class="fa-solid fa-sliders"></i></div>
+            <div class='setting__menu'><div class='setting__menu-item'><i class="fa-solid fa-font"></i><div class='font-choice'>Font1</div></div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
+            <div class='setting__menu-item'>
+            <div class='font-choice'>Font1</div>
+            </div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
+            </div>`
+
+            // console.log(noteArea.innerHTML)
+
+            const oldTitleField = document.querySelector('.note__right-title');
+            oldTitleField.value = targetTitle;
+
+            const oldBodyField = document.querySelector('.note__right-body');
+            oldBodyField.value = targetBody;
+
+            function addEventListenersToNewButtons() {
+              const updateButton = document.querySelector('.button__right-update')
+              const unchangedButton = document.querySelector('.button__right-unchanged')
+              console.log(updateButton)
+
+              updateButton.addEventListener('click', () => {
+                // console.log(oldTitleField.value + " " + oldTitleField) testing
+                targetTitle = oldTitleField.value;
+                targetBody = oldBodyField.value;
+
+                newArrayOfNotesAfterFilter.push(
+                  {
+                    id : targetId,
+                    title : targetTitle,
+                    body : targetBody,
+                    dateCreated : dateCreated,
+                    lastUpdate : new Date().toLocaleString()
+                  }
+                )
+
+                console.log(newArrayOfNotesAfterFilter)
+
+                localStorage.setItem('noteapp-notes', JSON.stringify(newArrayOfNotesAfterFilter));
+
+                makeNotesList(JSON.parse(localStorage.getItem('noteapp-notes')));
+
+                noteArea.innerHTML = ""
+
+              })
+
+              unchangedButton.addEventListener('click', () => {
+                noteArea.innerHTML = "";
+              })
+            }
+
+            addEventListenersToNewButtons()
+
+            // localStorage.setItem(
+            //   "noteapp-notes",
+            //   JSON.stringify(newArrayOfNotesAfterFilter)
+            // );
+
+            // console.log(newArrayOfNotesAfterFilter);
+          } else {
+            return;
+          }
+        }
+      );
+    });
+
+    // deleteButtons
+    // console.log(deleteButtons)
+  };
+
+  addEventListenerToUpdateButtons();
+
+}
 
 makeNotesList(JSON.parse(localStorage.getItem("noteapp-notes")));
 
@@ -198,6 +339,8 @@ function saveNewNote() {
   noteArea.innerHTML = "";
   // console.log(noteLeft);
 }
+
+
 
 // remove modal from the DOM
 const clearModal = () => {
