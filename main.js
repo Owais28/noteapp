@@ -98,8 +98,8 @@ const showNoteFunctionality = () => {
         note.addEventListener('click', function showNote(event) {
 
           const NOTE = event.target.parentNode
-          noteArea.innerHTML = `<div type='text' id="note-box" class='note__right-title'>${NOTE.children[0].textContent}</div>
-          <div class='note__right-body' >${NOTE.children[1].textContent}</div>`
+          noteArea.innerHTML = `<div type='text' id="note-box" class='note__show-title'>${NOTE.children[0].textContent}</div>
+          <div class='note__show-body' >${NOTE.children[1].textContent}</div>`
         //   let titleContent, bodyContent;
         // function fillInWrapper(title, body){
           // let noteBox = `<div type='text'  class='note__right-title' >${title}</div>

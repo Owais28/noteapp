@@ -17,6 +17,7 @@ body {
     grid-template-columns: 400px 1fr;
     overflow: hidden;
     /*height: 100vh;*/
+    width: 100vw;
 }
 
 input {
@@ -54,6 +55,7 @@ input {
 
     .app {
         grid-template-columns: 1fr;
+
     }
 }
 
@@ -110,24 +112,49 @@ textarea {
 .note__right {
     padding: 20px;
     border-left: 1px solid black;
-    position: relative;
+    position: relative; 
+    /* width: 100%; */
 }
 .note__right-title {
     font-weight: 700;
-    height: 5rem;
+    /* width: 100%; */
+    /* /* word-wrap: break-word;
     padding: 10px 10px;
     font-size: 4rem;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
     font-family: 'Spline Sans Mono', Courier, monospace;
 }
 
 .note__right-body {
     height: 80%;
-    padding: 10px 10px;
+    /* padding: 10px 10px;
     font-size: 1.3rem;
     resize: none;
     margin-bottom: 20px;
+    overflow: scroll;
+    width: 100vw; */
+}
+.note__show-title {
+    font-weight: 700;
+    /* width: 100%; */
+    word-wrap: break-word; 
+    padding: 10px 12px;
+    font-size: 4rem;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    font-family: 'Spline Sans Mono', Courier, monospace;
+    max-width: 100vw;
+}
+
+.note__show-body {
+    height: 80%;
+    padding: 10px 12px;
+    font-size: 1.3rem;
+    resize: none;
+    margin-bottom: 20px;
+    overflow: scroll; 
+    /* width: 100vw; */
 }
 
 button {
