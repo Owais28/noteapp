@@ -98,7 +98,7 @@ const showNoteFunctionality = () => {
         note.addEventListener('click', function showNote(event) {
 
           const NOTE = event.target.parentNode
-          noteArea.innerHTML = `<div type='text' class='note__right-title'>${NOTE.children[0].textContent}</div>
+          noteArea.innerHTML = `<div type='text' id="note-box" class='note__right-title'>${NOTE.children[0].textContent}</div>
           <div class='note__right-body' >${NOTE.children[1].textContent}</div>`
         //   let titleContent, bodyContent;
         // function fillInWrapper(title, body){
@@ -115,6 +115,8 @@ const showNoteFunctionality = () => {
         // noteArea.innerHTML = titleContent
 
         // console.log(NOTE.children[0].textContent)
+
+        window.scrollTo(0,500)
         })
       }
     )
@@ -255,7 +257,7 @@ function updateNoteFunctionality() {
             const oldBodyField = document.querySelector('.note__body');
             oldBodyField.value = targetBody;
 
-            
+            oldBodyField.focus()
 
             function addEventListenersToNewButtons() {
               const updateButton = document.querySelector('.button__right-update')
@@ -276,7 +278,7 @@ function updateNoteFunctionality() {
                     lastUpdate : new Date().toLocaleString()
                   }
                 )
-                console.log(newArrayOfNotesAfterFilter)
+                // console.log(newArrayOfNotesAfterFilter)
 
                 localStorage.setItem('noteapp-notes', JSON.stringify(newArrayOfNotesAfterFilter));
 
