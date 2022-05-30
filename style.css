@@ -162,6 +162,7 @@ textarea {
     margin-bottom: 20px;
     overflow: scroll; 
     /* width: 100vw; */
+    color: rgb(21, 21, 21);
 }
 
 button {
