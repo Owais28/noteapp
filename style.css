@@ -18,6 +18,7 @@ body {
     overflow: hidden;
     /*height: 100vh;*/
     width: 100vw;
+    position: relative;
 }
 
 input {
@@ -280,7 +281,7 @@ a {
 .setting__menu-item:last-child {
     border-bottom: none;
 }
-.modal-bedore {
+.modal-before {
     position: relative;
 }
 
@@ -289,7 +290,7 @@ a {
     align-items: center;
     z-index: 1000;
     position: absolute;
-    top: 2%;
+    top: 20px;
     right: 10%;
     padding: 20px;
     border: 2px solid rgb(251, 163, 163);
@@ -301,6 +302,12 @@ a {
 
 }
 
+@media screen and (max-width:450px){
+    .modal {
+        top: 100px;
+    }
+}
+
 .modal.success {
     background-color: rgb(227, 255, 185);
     border: 2px solid rgb(201, 249, 129);
@@ -308,7 +315,7 @@ a {
 
 @media screen and (max-width:450px) {
     .modal {
-        top: 110vh;
+        top: 410px;
     }
 
     /* @keyframes incoming {
