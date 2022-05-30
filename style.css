@@ -422,7 +422,12 @@ a {
 
 button {
     background-color: rgb(183, 108, 252);
-    background-image: linear-gradient(to bottom,rgb(99, 99, 252),blue);
+    background-image: linear-gradient(to bottom,rgb(99, 191, 252),rgb(0, 140, 255));
+    transition: box-shadow .3s ease;
+}
+
+button:hover {
+    box-shadow: 1px 1px 15px -2px rgb(99, 191, 252);
 }
 
 .fa-note {
