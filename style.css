@@ -191,13 +191,13 @@ textarea {
     }
 }
 button {
-    width: 100%;
     padding: 10px; 
     font-size: 1.4rem;
     background-color: rgb(90, 131, 90); 
     border-radius: 10px;  
     outline: none;
     border: none;
+    width: 100%;
     color: white;
 
 }
@@ -298,8 +298,8 @@ a {
     border-radius: 10px;
     animation: incoming .5s ease-in ;
     animation: fade 3s ease-in;
-    max-width: 80vw;
-
+    
+    max-width: 80vw; 
 }
 
 @media screen and (max-width:450px){
