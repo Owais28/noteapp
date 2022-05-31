@@ -454,6 +454,7 @@ button:hover {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .note__date {
