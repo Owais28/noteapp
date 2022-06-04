@@ -255,7 +255,9 @@ a {
     border: 2px solid black;
     width: 300px;
     border-radius: 3px;
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
+    
     transition: all .1s ease-in; 
 }
 

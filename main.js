@@ -20,10 +20,15 @@ const noteBox = `<input type='text' name='noteTitle' id='' class='note__right-ti
 <button type="button" class='button__right-save' >Save</button>
 <button type="button" class='button__right-delete delete'>Delete</button>
 <div class='setting__option'><i class="fa-solid fa-sliders"></i></div>
-<div class='setting__menu'><div class='setting__menu-item'><i class="fa-solid fa-font"></i><div class='font-choice'>Font1</div></div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
+<div class='setting__menu'>
+<div class='setting__menu-item change__font'>
+  <i class="fa-solid fa-font"></i><div class='font-choice'>Change Font</div></div>
+<div class='setting__menu-item add__todo'>
+  <i class="fa-solid fa-square-check"></i><div class='font-choice'>Add Todo</div></div>
 <div class='setting__menu-item'>
-<div class='font-choice'>Font1</div>
-</div><div class='setting__menu-item'><div class='font-choice'>Font1</div></div>
+  <div class='font-choice'>Font1</div></div>
+<div class='setting__menu-item'>
+  <div class='font-choice'>Font1</div></div>
 </div>`;
 
 const modalButton = document.querySelector(".modal-button");
@@ -48,9 +53,15 @@ addNewNoteButton.addEventListener("click", () => {
   const saveButton = document.querySelector(".button__right-save");
   saveButton.addEventListener("click", () => {
     saveNewNote();
-
-
   });
+
+  const optionButton = document.querySelector('.setting__option');
+  optionButton.addEventListener('click', (event) => {
+    const optionMenu = document.querySelector('.setting__menu')
+    optionMenu.classList.toggle('visibility')
+    // console.log(event.srcElement);
+  }) 
+
 
   const deleteButton = document.querySelector('.button__right-delete');
   deleteButton.addEventListener('click', () => {
