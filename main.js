@@ -1,7 +1,11 @@
+
+
 // !TODO : 1. add update feature ,
 
+if(!localStorage.getItem('noteapp-notes')) localStorage.setItem('noteapp-notes','[]')
 
 // localStorage.setItem('noteapp-notes',"[]");
+
 const settingOptionButton = document.querySelector(".setting__option");
 const settingMenu = document.querySelector(".setting__menu");
 const noteArea = document.querySelector(".note__right");
@@ -436,3 +440,4 @@ const addModal = (modal) => {
 
 const deleteButtons = document.querySelectorAll(".fa-trash-can");
 // console.log(deleteButtons)
+
