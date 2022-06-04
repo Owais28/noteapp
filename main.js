@@ -25,9 +25,9 @@ const noteBox = `<input type='text' name='noteTitle' id='' class='note__right-ti
   <i class="fa-solid fa-font"></i><div class='font-choice'>Change Font</div></div>
 <div class='setting__menu-item add__todo'>
   <i class="fa-solid fa-square-check"></i><div class='font-choice'>Add Todo</div></div>
-<div class='setting__menu-item'>
+<div class='setting__menu-item add__link'>
   <i class="fa-solid fa-link"></i><div class='font-choice'>Add link</div></div>
-<div class='setting__menu-item'>
+<div class='setting__menu-item add__priority'>
   <i class="fa-solid fa-arrow-up-1-9"></i><div class='font-choice'>Add priority</div></div>
 </div>`;
 
@@ -61,6 +61,29 @@ addNewNoteButton.addEventListener("click", () => {
     optionMenu.classList.toggle('visibility')
     // console.log(event.srcElement);
   }) 
+  
+  const optionItems = document.querySelectorAll('.setting__menu-item'); //length 4
+  const changeFontOption = optionItems[0]
+  const addTodoOption = optionItems[1]
+  const addLinkOption = optionItems[2]
+  const addPriorityOption = optionItems[3]
+
+  changeFontOption.addEventListener('click', function changeFont() {
+    const optionModal = ``;
+    console.log("changing Font")
+  })
+
+  addTodoOption.addEventListener('click', function addTodo() {
+    console.log("adding todo")
+  })
+
+  addLinkOption.addEventListener('click', function addLink() {
+    console.log("adding link")
+  })
+
+  addPriorityOption.addEventListener('click', function addPriority() {
+    console.log("adding priority")
+  })
 
 
   const deleteButton = document.querySelector('.button__right-delete');
