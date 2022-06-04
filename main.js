@@ -1,6 +1,7 @@
 
 
-// !TODO : 1. add update feature ,
+// !TODO : I was working on First Modal of Options thats is 'Change font'
+// TODO : Go to line 72
 
 if(!localStorage.getItem('noteapp-notes'))
 {
@@ -69,8 +70,24 @@ addNewNoteButton.addEventListener("click", () => {
   const addPriorityOption = optionItems[3]
 
   changeFontOption.addEventListener('click', function changeFont() {
-    const optionModal = ``;
-    console.log("changing Font")
+    const modalWrapper = document.createElement('div')
+    modalWrapper.innerHTML = `<div class='choose__font'>Choose Font</div><div class='options'>
+    <label for='timesNewRoman'>
+        <input type='radio' name='font' id='timesNewRoman' value>Times New Roman
+    </label>
+    <label for='timesNewRoman'>
+        
+        <input type='radio' name='font' id='timesNewRoman' value>Times New Roman
+    </label>
+    <label for='timesNewRoman'>
+        
+        <input type='radio' name='font' id='timesNewRoman' value>Times New Roman
+    </label>
+</div><button class="change__font-button">Change Font</button>`
+    const optionModal = `<div class='optional__modal'></div>`
+  const app = document.querySelector('.app')
+  app.append(modalWrapper)
+    console.log(app)
   })
 
   addTodoOption.addEventListener('click', function addTodo() {
