@@ -2,7 +2,10 @@
 
 // !TODO : 1. add update feature ,
 
-if(!localStorage.getItem('noteapp-notes')) localStorage.setItem('noteapp-notes','[]')
+if(!localStorage.getItem('noteapp-notes'))
+{
+  localStorage.setItem('noteapp-notes','[]')
+}
 
 // localStorage.setItem('noteapp-notes',"[]");
 
