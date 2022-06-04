@@ -274,10 +274,11 @@ a {
     font-size: 1.2rem;
     background-color: rgb(254, 254, 203);
     display: flex;
+    align-items: center;
 }
 
 .setting__menu-item i {
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 .setting__menu-item:last-child {

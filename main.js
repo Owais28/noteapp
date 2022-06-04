@@ -26,9 +26,9 @@ const noteBox = `<input type='text' name='noteTitle' id='' class='note__right-ti
 <div class='setting__menu-item add__todo'>
   <i class="fa-solid fa-square-check"></i><div class='font-choice'>Add Todo</div></div>
 <div class='setting__menu-item'>
-  <div class='font-choice'>Font1</div></div>
+<i class="fa-solid fa-link-simple"></i><div class='font-choice'>Add link</div></div>
 <div class='setting__menu-item'>
-  <div class='font-choice'>Font1</div></div>
+  <div class='font-choice'>Add priority</div></div>
 </div>`;
 
 const modalButton = document.querySelector(".modal-button");
