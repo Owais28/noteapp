@@ -46,6 +46,7 @@ addNewNoteButton.addEventListener("click", () => {
   saveButton.addEventListener("click", () => {
     saveNewNote();
 
+
   });
 
   const deleteButton = document.querySelector('.button__right-delete');
@@ -192,7 +193,7 @@ const deleteNoteFunctionality = () => {
 
 function updateNoteFunctionality() {
   noteArea.innerHTML = ""
-  console.log(noteArea);
+  // console.log(noteArea);
 
   // adding event listeners to update button
   const addEventListenerToUpdateButtons = () => {
@@ -321,7 +322,7 @@ function updateNoteFunctionality() {
   };
 
   addEventListenerToUpdateButtons();
-  console.log(noteArea.innerHTML)
+  // console.log(noteArea.innerHTML)
 
 }
 
