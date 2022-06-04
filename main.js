@@ -1,7 +1,7 @@
 // !TODO : 1. add update feature ,
 
-
- localStorage.setItem('noteapp-notes',"[]");
+if(!localStorage.getItem('noteapp-notes')){
+ localStorage.setItem('noteapp-notes',"[]");}
 const settingOptionButton = document.querySelector(".setting__option");
 const settingMenu = document.querySelector(".setting__menu");
 const noteArea = document.querySelector(".note__right");
