@@ -483,7 +483,7 @@ button:hover {
     max-width: 400px;
     /* max-width: 60vw; */
     z-index: 2222222;
-    top: 30vh;
+    top: 0;
     right: 20vw;
     background-color: white;
     padding: 20px;
@@ -491,7 +491,18 @@ button:hover {
     backdrop-filter: blur(2rem);
     border: 2px solid black;
     /* display: none; */
+    transition: all .3s ease-in;
+    animation: takeinviewport .3s forwards;
+}
 
+@keyframes takeinviewport {
+    from {
+        top:0;
+    }
+
+    to {
+        top : 20vh;
+    }
 }
 
 .optional__modal input {

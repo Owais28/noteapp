@@ -95,7 +95,7 @@ addNewNoteButton.addEventListener("click", () => {
           <input type='radio' name='font' id='caveat' value="Caveat">Caveat
       </label>
       <label for='default'>
-          <input type='radio' name='font' id='default' value="default">Default
+          <input type='radio' name='font' id='default' value="default" checked>Default
       </label>
   </div><button class="change__font-button modal__button">Change Font</button>`
       const optionModal = `<div class='optional__modal'></div>`
@@ -112,6 +112,16 @@ addNewNoteButton.addEventListener("click", () => {
         modalCount -=1;
         console.log(modalCount);
       })
+
+      // window.onclick = (event) => {
+      //   if(modalWrapper){
+      //     modalWrapper.style.display = 'none'
+      //     modalWrapper.remove()
+      //     modalCount -= 1
+      //   }
+      // }
+
+
   }
   })
 
