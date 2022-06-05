@@ -79,8 +79,8 @@ addNewNoteButton.addEventListener("click", () => {
       <label for='timesNewRoman'>
           <input type='radio' name='font' id='timesNewRoman' value="Times New Roman">Times New Roman
       </label>
-      <label for='bebusNeue'>
-          <input type='radio' name='font' id='bebusNeue' value="Bebus Neue">Bebus Neue
+      <label for='bebasNeue'>
+          <input type='radio' name='font' id='bebasNeue' value="Bebas Neue">Bebas Neue
       </label>
       <label for='yanoneKaffeesatz'>
           <input type='radio' name='font' id='yanoneKaffeesatz' value="Yanone Kaffeesatz">Yanone Kaffeesatz
@@ -111,6 +111,45 @@ addNewNoteButton.addEventListener("click", () => {
         modalWrapper.remove();
         modalCount -=1;
         console.log(modalCount);
+      })
+
+      const changeFontBtn = document.querySelector('.change__font-button')
+      changeFontBtn.addEventListener('click', function changeFont(){
+
+        const noteTitle = document.querySelector('.note__right-title')
+        const noteBody = document.querySelector('.note__right-body')
+
+        const radioTimesNewRoman = document.getElementById('timesNewRoman')
+        const radioBebasNeue = document.getElementById('bebasNeue')
+        const radioYanoneKaffeesatz = document.getElementById('yanoneKaffeesatz')
+        const radioPacifico = document.getElementById('pacifico')
+        const radioAbrilFatface = document.getElementById('abrilFatface')
+        const radioCaveat = document.getElementById('caveat')
+
+        if (radioTimesNewRoman.checked) {
+          noteTitle.style.fontFamily = radioTimesNewRoman.value
+          noteBody.style.fontFamily = radioTimesNewRoman.value
+        } else if(radioBebasNeue.checked) {          
+          noteTitle.style.fontFamily = radioBebasNeue.value
+          noteBody.style.fontFamily = radioBebasNeue.value
+        } else if(radioYanoneKaffeesatz.checked){
+          noteTitle.style.fontFamily = radioYanoneKaffeesatz.value
+          noteBody.style.fontFamily = radioYanoneKaffeesatz.value
+        } else if(radioPacifico.checked) {
+          noteTitle.style.fontFamily = radioPacifico.value
+          noteBody.style.fontFamily = radioPacifico.value
+        } else if(radioAbrilFatface.checked){
+          noteTitle.style.fontFamily = radioAbrilFatface.value
+          noteBody.style.fontFamily = radioAbrilFatface.value
+        } else if(radioCaveat.checked){
+          noteTitle.style.fontFamily = radioCaveat.value
+          noteBody.style.fontFamily = radioCaveat.value
+        }
+        
+        modalWrapper.style.display = 'none';
+        modalWrapper.remove();
+        modalCount -=1;
+
       })
 
       // window.onclick = (event) => {

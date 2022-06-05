@@ -494,7 +494,7 @@ button:hover {
     transition: all .3s ease-in;
     animation: takeinviewport .3s forwards;
     backdrop-filter: blur(1rem);
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, .5);
 }
 
 @keyframes takeinviewport {
@@ -547,7 +547,7 @@ label[for="timesNewRoman"] {
     font-family: 'Times New Roman', Times, serif;
 }
 
-label[for="bebusNeue"]{
+label[for="bebasNeue"]{
     font-family: 'Bebas Neue', cursive;
 }
 
