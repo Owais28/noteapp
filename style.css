@@ -493,6 +493,8 @@ button:hover {
     /* display: none; */
     transition: all .3s ease-in;
     animation: takeinviewport .3s forwards;
+    backdrop-filter: blur(1rem);
+    background-color: rgba(255, 255, 255, 0);
 }
 
 @keyframes takeinviewport {
