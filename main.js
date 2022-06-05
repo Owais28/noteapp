@@ -94,6 +94,9 @@ addNewNoteButton.addEventListener("click", () => {
       <label for='caveat'>
           <input type='radio' name='font' id='caveat' value="Caveat">Caveat
       </label>
+      <label for='default'>
+          <input type='radio' name='font' id='default' value="default">Default
+      </label>
   </div><button class="change__font-button modal__button">Change Font</button>`
       const optionModal = `<div class='optional__modal'></div>`
     const app = document.querySelector('.app')

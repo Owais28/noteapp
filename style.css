@@ -478,7 +478,7 @@ button:hover {
 /* Emoji  */
 
 .optional__modal {
-    position: absolute;
+    position: fixed;
     width: 60vw;
     max-width: 400px;
     /* max-width: 60vw; */
