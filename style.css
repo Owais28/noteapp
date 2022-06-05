@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi:ital@0;1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Caveat:wght@400;500;600;700&family=Pacifico&family=Yanone+Kaffeesatz:wght@200;400;500;600;700&display=swap');
 * {
     padding:0 ;
     margin: 0;
@@ -518,5 +518,38 @@ button:hover {
 label {
     display: flex;
     align-items: center;
+    font-size: 1.2rem;
     /* height: max-content; */
+}
+
+
+
+/* font-family: 'Abril Fatface', cursive; */
+/* font-family: 'Bebas Neue', cursive; */
+/* font-family: 'Caveat', cursive; */
+/* font-family: 'Pacifico', cursive; */
+/* font-family: 'Yanone Kaffeesatz', sans-serif; */
+
+label[for="timesNewRoman"] {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+label[for="bebusNeue"]{
+    font-family: 'Bebas Neue', cursive;
+}
+
+label[for="yanoneKaffeesatz"]{
+    font-family: 'Yanone Kaffeesatz', sans-serif;   
+}
+
+label[for="pacifico"]{
+    font-family: 'Pacifico', cursive;
+}
+
+label[for="abrilFatface"]{
+    font-family: 'Abril Fatface', cursive;
+}
+
+label[for="caveat"]{
+    font-family: 'Caveat', cursive;
 }

@@ -77,15 +77,22 @@ addNewNoteButton.addEventListener("click", () => {
       modalWrapper.classList.add('optional__modal')
       modalWrapper.innerHTML = `<div class='choose__font modal__heading'>Choose Font<i class="fa-solid fa-circle-xmark"></i></div><div class='options'>
       <label for='timesNewRoman'>
-          <input type='radio' name='font' id='timesNewRoman' value>Times New Roman
+          <input type='radio' name='font' id='timesNewRoman' value="Times New Roman">Times New Roman
       </label>
-      <label for='timesNewRoman'>
-          
-          <input type='radio' name='font' id='timesNewRoman' value>Times New Roman
+      <label for='bebusNeue'>
+          <input type='radio' name='font' id='bebusNeue' value="Bebus Neue">Bebus Neue
       </label>
-      <label for='timesNewRoman'>
-          
-          <input type='radio' name='font' id='timesNewRoman' value>Times New Roman
+      <label for='yanoneKaffeesatz'>
+          <input type='radio' name='font' id='yanoneKaffeesatz' value="Yanone Kaffeesatz">Yanone Kaffeesatz
+      </label>
+      <label for='pacifico'>
+          <input type='radio' name='font' id='pacifico' value="Pacifico">Pacifico
+      </label>
+      <label for='abrilFatface'>
+          <input type='radio' name='font' id='abrilFatface' value="Abril Fatface">Abril Fatface
+      </label>
+      <label for='caveat'>
+          <input type='radio' name='font' id='caveat' value="Caveat">Caveat
       </label>
   </div><button class="change__font-button modal__button">Change Font</button>`
       const optionModal = `<div class='optional__modal'></div>`
